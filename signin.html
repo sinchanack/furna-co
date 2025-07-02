@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Furna&Co</a>
+        <div class="bx-menu" id="menu-icon">&#9776;</div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" id="furniture-btn">Furniture</a></li>
+            <li><a href="#" id="home-decor-btn">Home Decor</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+    </header>
+
+    <section class="signin">
+        <div class="signin-form">
+            <h2>Sign In</h2>
+            <form id="signinForm">
+                <div class="form-group">
+                    <label for="signin-email">E-Mail:</label>
+                    <input type="email" id="signin-email" name="email" placeholder="Enter your email" required>
+                    <div id="signin-email-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signin-username">Username:</label>
+                    <input type="text" id="signin-username" name="username" placeholder="Enter your username" pattern="[A-Za-z0-9]+" title="Username must only contain letters and numbers" required>
+                    <div id="signin-username-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password:</label>
+                    <input type="password" id="signin-password" name="password" placeholder="Enter your password" pattern=".{6,}" title="Password must be at least 6 characters long." required>
+                    <div id="signin-password-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" pattern=".{6,}" title="Password must be at least 6 characters long." required>
+                    <div id="confirm-password-error" class="error"></div>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            <p>Already registered? <a href="login.html">Login</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Validate form data
+            var password = document.getElementById('signin-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var email = document.getElementById('signin-email').value;
+            var username = document.getElementById('signin-username').value;
+
+            if (password === confirmPassword) {
+                // Store sign-in details in localStorage
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userUsername', username);
+                localStorage.setItem('userPassword', password);
+
+                // Redirect to login page
+                window.location.href = 'login.html';
+            } else {
+                // Display error if passwords do not match
+                document.getElementById('confirm-password-error').textContent = 'Passwords do not match.';
+            }
+        });
+    </script>
+</body>
+</html>

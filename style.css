@@ -1,0 +1,531 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+header .bx-menu {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+header .navbar {
+    display: flex;
+    list-style: none;
+}
+
+header .navbar li {
+    margin-left: 1rem;
+}
+
+header .navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Home Section */
+.home {
+    background: url("bg.jpg") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 20rem 1rem; /* Default padding */
+    display: block; /* Ensure it's visible by default */
+}
+.hide-bg {
+    background: none; /* Removes the background image */
+    padding: 0rem 1rem; /* Adjust padding as needed */
+}
+
+.home h1 {
+    font-size: 3rem;
+}
+
+.home h1 span {
+    color: #f39c12;
+}
+
+.home p {
+    margin: 1rem 0;
+}
+
+.home .btn {
+    background: #f39c12;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Shop Section */
+.shop, .new {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.shop .heading span, .new .heading span {
+    font-size: 1.2rem;
+    color: #f39c12;
+}
+
+.shop .heading h2, .new .heading h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.shop-container, .new-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin: 0.5rem 0;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.about-img img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.about-text {
+    flex: 1;
+    padding: 1rem;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about .btn {
+    background: #f39c12;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.newsletter .news-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.news-box input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.news-box .btn {
+    background: #f39c12;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    background: #333;
+    color: #fff;
+}
+
+.footer .footer-box {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.footer .footer-box h2, .footer .footer-box h3 {
+    margin-bottom: 1rem;
+}
+
+.footer .footer-box p, .footer .footer-box li {
+    margin-bottom: 0.5rem;
+}
+
+.footer .footer-box li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .social {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer .social a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* Copyright */
+.copyright {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.copyright p {
+    margin: 0;
+}
+/* Additional styles for cart and wishlist */
+.cart, .wishlist {
+    padding: 50px;
+    text-align: center;
+}
+
+.cart-container, .wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart .product, .wishlist .product {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 200px;
+    text-align: center;
+}
+
+.cart .product img, .wishlist .product img {
+    max-width: 100%;
+    height: auto;
+}
+/* Search Section Styling */
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Main section styling */
+.login-signin, .signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+    padding: 20px;
+}
+
+.login-form, .signin-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+p a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Search Section Styling */
+.search {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the contents */
+    margin: 20px 0;
+}
+
+#search-bar {
+    flex: 1; /* Make the search bar take up remaining space */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between input and button */
+    max-width: 600px; /* Optional: set a maximum width for larger screens */
+}
+
+#search-btn {
+    padding: 10px 15px; /* Smaller padding */
+    border: none;
+    border-radius: 5px;
+    background-color: #f39c12; /* Orange background */
+    color: #fff; /* White text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 40px; /* Set a specific height */
+    min-width: 100px; /* Set a minimum width */
+}
+
+/* Hover and active states */
+#search-btn:hover {
+    background-color: #e67e22; /* Slightly darker orange on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+#search-btn:active {
+    background-color: #d35400; /* Even darker orange when clicked */
+    transform: scale(1); /* Reset size */
+}
+
+
+
+/* Account Menu Styling */
+#account-menu {
+    position: relative;
+}
+
+#account-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+}
+
+#account-options li {
+    margin: 0;
+}
+
+#account-options a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+#account-options a:hover {
+    background: #444;
+}
+/* Add these styles to your existing CSS file */
+#user-menu {
+    position: relative;
+}
+
+#logout-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#logout-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#logout-dropdown a:hover {
+    background-color: #ddd;
+}
+/* Newsletter Section */
+.newsletter {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.newsletter .news-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.news-box input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex: 1; /* Make the input field take up remaining space */
+    max-width: 600px; /* Increase maximum width for larger screens */
+}
+
+.news-box .btn {
+    background: #f39c12;
+    color: #fff;
+    padding: 0.25rem 0.5rem; /* Smaller padding for a smaller button */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.news-box .btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.news-box .btn:active {
+    background-color: #d35400;
+    transform: scale(1);
+}

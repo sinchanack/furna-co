@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Furna&Co</a>
+        <div class="bx-menu" id="menu-icon">&#9776;</div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" id="furniture-btn">Furniture</a></li>
+            <li><a href="#" id="home-decor-btn">Home Decor</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+    </header>
+
+    <section class="login-signin">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-email">E-Mail:</label>
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                    <div id="login-email-error" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" pattern=".{6,}" title="Password must be at least 6 characters long." required>
+                    <div id="login-password-error" class="error"></div>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Not registered? <a href="signin.html">Sign In</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Retrieve stored sign-in details
+            var storedEmail = localStorage.getItem('userEmail');
+            var storedPassword = localStorage.getItem('userPassword');
+
+            // Get entered login details
+            var loginEmail = document.getElementById('login-email').value;
+            var loginPassword = document.getElementById('login-password').value;
+
+            // Validate login details
+            if (loginEmail === storedEmail && loginPassword === storedPassword) {
+                // Redirect to index page if details match
+                window.location.href = 'index.html';
+            } else {
+                // Display error if details do not match
+                document.getElementById('login-email-error').textContent = 'Invalid email or password.';
+            }
+        });
+    </script>
+</body>
+</html>

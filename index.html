@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Furna&Co</a>
+        <div class="bx-menu" id="menu-icon">&#9776;</div>
+        <section class="search">
+            <input type="text" id="search-bar" placeholder="Search products...">
+            <button id="search-btn" class="btn">Search</button>
+        </section>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" id="furniture-btn">Furniture</a></li>
+            <li><a href="#" id="home-decor-btn">Home Decor</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+
+            <li id="user-menu" style="display: none;">
+                <a href="#" id="user-name"></a>
+                <div id="logout-dropdown" class="dropdown-content" style="display: none;">
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
+            </li>
+            <li id="login-btn">
+                <a href="login.html">Login</a>
+            </li>
+        </ul>
+        
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeSection = document.querySelector('.home');
+            const homeBtn = document.getElementById('home-btn');
+            const otherButtons = [
+                document.getElementById('furniture-btn'),
+                document.getElementById('home-decor-btn'),
+                document.getElementById('search-btn')
+            ];
+    
+            // Function to show the background image
+            function showBackground() {
+                homeSection.classList.remove('hide-bg');
+            }
+    
+            // Function to hide the background image
+            function hideBackground() {
+                homeSection.classList.add('hide-bg');
+            }
+    
+            // Event listener for the home button
+            if (homeBtn) {
+                homeBtn.addEventListener('click', showBackground);
+            }
+    
+            // Event listeners for other buttons
+            otherButtons.forEach(button => {
+                if (button) {
+                    button.addEventListener('click', hideBackground);
+                }
+            });
+        });
+    </script>
+    
+    <!-- Sections for content -->
+    <section class="home">
+        <h1><span>Welcome to Furna&Co</span></h1>
+        <p>Find the best products for your home.</p>
+        <a href="#" class="btn" id="shop-now-btn">Shop Now</a>
+    </section>
+    
+    <section class="shop" id="shop-section">
+        <div class="heading">
+            <span>Our Collection</span>
+            <h2>Furniture</h2>
+        </div>
+        <div class="shop-container">
+            <!-- Dynamic content will be added here -->
+        </div>
+    </section>
+
+    <section class="new" id="new-section">
+        <div class="heading">
+            <span>New Arrivals</span>
+            <h2>Home Decor</h2>
+        </div>
+        <div class="new-container">
+            <!-- Dynamic content will be added here -->
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-img">
+            <img src="about.jpg" alt="About Us">
+        </div>
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Hello...we are excited to show you our new products. Explore more to get the latest furniture and decor item collections...</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <div class="news-box">
+            <input type="email" placeholder="Your Email">
+            <a href="#" class="btn">Subscribe</a>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var userMenu = document.getElementById('user-menu');
+            var loginBtn = document.getElementById('login-btn');
+            var userName = document.getElementById('user-name');
+            var logoutDropdown = document.getElementById('logout-dropdown');
+            var logoutBtn = document.getElementById('logout-btn');
+
+            // Check if user is logged in
+            var storedUsername = localStorage.getItem('userUsername');
+
+            if (storedUsername) {
+                // Display username and hide login button
+                userName.textContent = storedUsername;
+                userMenu.style.display = 'block';
+                loginBtn.style.display = 'none';
+                
+                // Show logout dropdown on click
+                userName.addEventListener('click', function() {
+                    logoutDropdown.style.display = logoutDropdown.style.display === 'none' ? 'block' : 'none';
+                });
+
+                // Handle logout
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('userEmail');
+                    localStorage.removeItem('userUsername');
+                    localStorage.removeItem('userPassword');
+                    userMenu.style.display = 'none';
+                    loginBtn.style.display = 'block';
+                    logoutDropdown.style.display = 'none';
+                });
+            } else {
+                userMenu.style.display = 'none';
+                loginBtn.style.display = 'block';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const subscribeBtn = document.querySelector('.newsletter .btn');
+            const emailInput = document.querySelector('.newsletter input[type="email"]');
+    
+            if (subscribeBtn) {
+                subscribeBtn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default action of the button
+    
+                    const email = emailInput.value.trim();
+                    if (email) {
+                        // Simulate subscription process
+                        alert('Subscribed successfully!'); // Show notification
+                        emailInput.value = ''; // Clear the input field
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        });
+    </script>
+    
+    
+    <footer class="footer">
+        <div class="footer-box">
+            <h2>Contact Us</h2>
+            <p>Mangalore, India</p>
+            <p>Email: shrajnar2004@gmail.com</p>
+            <p>Email: sinchanackotian@gmail.com</p>
+        </div>
+        <div class="footer-box">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h2>Follow Us</h2>
+            <div class="social">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>&copy; 2024 MyStore. All rights reserved.</p>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
